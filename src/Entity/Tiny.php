@@ -28,6 +28,36 @@ class Tiny
      */
     private $bookings;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $location;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $activities;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nbPersons;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $pets;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pension;
+
     public function __construct()
     {
         $this->bookings = new ArrayCollection();
@@ -77,6 +107,78 @@ class Tiny
                 $booking->setTiny(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(string $location): self
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    public function getActivities(): ?string
+    {
+        return $this->activities;
+    }
+
+    public function setActivities(string $activities): self
+    {
+        $this->activities = $activities;
+
+        return $this;
+    }
+
+    public function getNbPersons(): ?int
+    {
+        return $this->nbPersons;
+    }
+
+    public function setNbPersons(int $nbPersons): self
+    {
+        $this->nbPersons = $nbPersons;
+
+        return $this;
+    }
+
+    public function getPets(): ?bool
+    {
+        return $this->pets;
+    }
+
+    public function setPets(bool $pets): self
+    {
+        $this->pets = $pets;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getPension(): ?string
+    {
+        return $this->pension;
+    }
+
+    public function setPension(string $pension): self
+    {
+        $this->pension = $pension;
 
         return $this;
     }

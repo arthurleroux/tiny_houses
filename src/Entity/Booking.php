@@ -28,6 +28,16 @@ class Booking
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $beginningDate;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $endDate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +63,30 @@ class Booking
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getBeginningDate(): ?\DateTimeInterface
+    {
+        return $this->beginningDate;
+    }
+
+    public function setBeginningDate(\DateTimeInterface $beginningDate): self
+    {
+        $this->beginningDate = $beginningDate;
+
+        return $this;
+    }
+
+    public function getEndDate(): ?\DateTimeInterface
+    {
+        return $this->endDate;
+    }
+
+    public function setEndDate(\DateTimeInterface $endDate): self
+    {
+        $this->endDate = $endDate;
 
         return $this;
     }
